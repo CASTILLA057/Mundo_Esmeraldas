@@ -1,0 +1,144 @@
+/* Estilos básicos */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; 
+}
+
+/* Variables de colores */
+:root{
+    --color_primario_1: #004b23;
+    --color_primario_2: #006400;
+    --color_primario_3: #007200;
+    --color_primario_4: #008000;
+    --color_primario_5: #296b29;
+    --color_primario_6: #38b000;
+    --color_primario_7: #70e000;
+    --color_primario_8: #9ef01a;
+    --color_primario_9: #ccff33;
+    --color_primario_10: #c7eec2;
+    --color_background_1: #f1f1f1;
+    --color_background_2: #e2c72f;
+    --color_background_3: #e3eae6;
+    --color_letras_1: #072520;
+    --color_text_1: black;
+}
+
+/* Fondo */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    z-index: -1;
+}
+
+/* Contenedor del mensaje */
+.message-container {
+    text-align: center;
+    color: #fff;
+    font-size: 1.8em; 
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 50px;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    max-width: 350px;
+    width: 90%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Texto encima del GIF con efectos visuales */
+.message-container p {
+    margin: 20px 0;
+    text-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00, 0 0 35px #ff6600, 0 0 45px #ff3300; /* Sombra colorida */
+    letter-spacing: 3px;
+    font-weight: bolder;
+    animation: glowText 1.5s ease-in-out infinite alternate; /* Animación para el texto */
+}
+
+/* GIF del carrito */
+.message-container img {
+    width: 200px; 
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.message-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación del texto para hacerlo brillar */
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 15px var(--color_background_3), 0 0 25px var(--color_letras_1), 0 0 35px var(--color_primario_2), 0 0 45px #00ff22;
+    }
+    100% {
+        text-shadow: 0 0 25px var(--color_background_3), 0 0 45px var(--color_letras_1), 0 0 65px var(--color_primario_2), 0 0 85px #00ff22;
+    }
+}
+
+/* Botón "Volver" */
+.volver-link {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color_primario_5);
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.volver-link:hover {
+    color: var(--color_letras_1);
+    background-color: var(--color_primario_10);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.volver-link:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.volver-link:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
