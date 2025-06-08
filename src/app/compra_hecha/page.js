@@ -15,7 +15,7 @@ const CompraRealizada = () => {
             <div className="message-container">
                 <p>¡Su compra ha sido realizada!</p>
                 <img
-                    src="/imagenes/fondo/carrito.png" // Cambia por la extensión correcta
+                    src="/imagenes/fondo/carrito" // Cambia por la extensión correcta
                     alt="Carrito de compra completada"
                 />
                 <Link href="/">
